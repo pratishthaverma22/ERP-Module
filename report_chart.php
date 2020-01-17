@@ -3,22 +3,16 @@
       <title>Highcharts Tutorial</title>
       <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
       </script>
-      <script src = "https://code.highcharts.com/highcharts.js"></script>  
+      <script src = "https://code.highcharts.com/highcharts.js"></script>
    </head>
-   
+
    <body>
       <div id = "container" style = "width: 550px; height: 400px; margin: 0 auto"></div>
 
 	  <?php
-
-$sap =	"40001713";
-
+    require('connection.php');
+    $sap =	"40001713";
 $count = 0;
-
-$user = "root";
-$pass = "";
-$dbs = "phpmyadmin";
-$db = mysqli_connect("localhost",$user,$pass,$dbs);
 $indexed=array("SCI","Scopus","eSCI","UGC Approved","Other");
 foreach($indexed as $index)
 {
@@ -57,7 +51,7 @@ $ind["$index"]=mysqli_num_rows($result);
                plotShadow: false
             };
             var title = {
-               text: 'Publications indexed in Scopus and above'   
+               text: 'Publications indexed in Scopus and above'
             };
             var tooltip = {
                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -66,7 +60,7 @@ $ind["$index"]=mysqli_num_rows($result);
                pie: {
                   allowPointSelect: true,
                   cursor: 'pointer',
-                  
+
                   dataLabels: {
                      enabled: true,
                      format: '<b>{point.name}%</b>: {point.percentage:.1f} %',
@@ -82,15 +76,15 @@ $ind["$index"]=mysqli_num_rows($result);
                name: 'Browser share',
                data: [data[0],data[1],data[2],data[3],data[4]]
             }];
-            var json = {};   
-            json.chart = chart; 
-            json.title = title;     
-            json.tooltip = tooltip;  
+            var json = {};
+            json.chart = chart;
+            json.title = title;
+            json.tooltip = tooltip;
             json.series = series;
             json.plotOptions = plotOptions;
-            $('#container').highcharts(json);  
+            $('#container').highcharts(json);
          });
       </script>
    </body>
-   
+
 </html>

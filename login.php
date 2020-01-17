@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html> 
-   <head> 
-      <title>ResearchPortal</title> 
+<html>
+   <head>
+      <title>ResearchPortal</title>
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  <style>
 			* {
@@ -40,19 +40,16 @@
 				bgcolor:#CACFD2;
 			}
 		</style>
-	</head> 
-	<body background="login1.jpg"> 
+	</head>
+	<body background="login1.jpg">
 		<?php
-			session_start();
+      require('connection.php');
+      session_start();
 			$error='';
 			if($_SERVER["REQUEST_METHOD"] == "POST")
 			{
-				$user = 'root';
-				$pass = '';
-				$dbs = 'phpmyadmin';
 				$result  = NULL;
 				$login=$_POST["loginid"];
-				$db = mysqli_connect('localhost',$user,$pass,$dbs) or die("Unable to connect");
 				$query = "SELECT * FROM login WHERE ID = $login";
 				$result = mysqli_query($db,$query);
 				if(!$result)
@@ -73,17 +70,17 @@
 				}
 			}
 		?>
-		<div class="header"> 
-			<img src="UPES_Logo.png" alt="UPES" width="20%" height="10%">
-		</div> 
-		<div class="info"><img src="login.png" alt="RESEACH" width="85%" height="85%"></div>
-		<div class="info"> 
-			<h1>My Research Is My Freedom</h1> 
-			<p>write something</p> 
-			<h2>My Research Is My Freedom</h2> 
-			<p>Write Something</p> 
-		</div> 
-		<div class="main"> 
+		<div class="header">
+			<img src="./img/UPES_Logo.png" alt="UPES" width="20%" height="10%">
+		</div>
+		<div class="info"><img src="./img/login.png" alt="RESEACH" width="85%" height="85%"></div>
+		<div class="info">
+			<h1>My Research Is My Freedom</h1>
+			<p>write something</p>
+			<h2>My Research Is My Freedom</h2>
+			<p>Write Something</p>
+		</div>
+		<div class="main">
 			<center><h2 style="color:yellow">Login Here</h2></center>
             <form action = "" method = "post">
 				<label>UserName  :&nbsp;&nbsp;</label><input type = "text" name = "loginid" class = "box"/><br /><br />
@@ -91,6 +88,6 @@
 				<center><input type = "submit" value = " Login"/></center><br />
             </form>
 			<?php echo $error; ?>
-		</div> 
-	</body> 
-</html> 
+		</div>
+	</body>
+</html>

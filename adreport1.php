@@ -1,13 +1,10 @@
 <?php
+require('connection.php');
 session_start();
 $filter = $_GET['q'];
 $desig = $_SESSION['desig'];
 $sap = $_SESSION["sapid"];
 $dep = $_SESSION["dep"];
-$user = "root";
-$pass = "";
-$dbs = "phpmyadmin";
-$db = mysqli_connect("localhost",$user,$pass,$dbs);
 $mon=array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
 $category=array("Journal","Conference","Book Chapter","Book","Magazine","News Paper","White Paper","Patent","Transaction");
 $indexed=array("SCI","Scopus","eSCI","UGC Approved","Other");
@@ -27,7 +24,7 @@ $count = 0;
 			<th width="14%">Cybernetics</th>
 			<th width="14%">Virtualization</th>
 			<th width="14%">Computer Application</th>
-		
+
 		</tr>
 		<tr bgcolor="#15b0cf">
 			<td>No. of Publication</td>
@@ -71,7 +68,7 @@ $count = 0;
 			echo"</tr>";
 		}
 		?>
-		
+
 		<tr bgcolor="#15b0cf">
 		<td colspan="7">Indexing</td>
 		</tr>
