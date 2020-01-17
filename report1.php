@@ -1,13 +1,10 @@
 <?php
+require('connection.php');
 session_start();
 $count = 0;
 $desig = $_SESSION['desig'];
 $tab = $_SESSION["tab"];
 $dep = $_SESSION["dep"];
-$user = "root";
-$pass = "";
-$dbs = "phpmyadmin";
-$db = mysqli_connect("localhost",$user,$pass,$dbs);
 $query = $_GET['q'];
 $result = mysqli_query($db,$query);
 if(!$result)
@@ -26,7 +23,7 @@ if(!$result)
 			<?php
 			}
 			?>
-			
+
 			<th>TITLE</th>
 			<th>AUTHORS</th>
 			<th>DEPARTMENT</th>
@@ -51,12 +48,12 @@ if(!$result)
 
 if(mysqli_num_rows($result)>0)
 {
-	
+
 	while($row = mysqli_fetch_assoc($result))
 	{
 		$count++;
 		$title = $row['title'];
-		
+
 
 		echo"<tr>";
 			echo"<td >".$count."</td>";
@@ -84,8 +81,8 @@ if(mysqli_num_rows($result)>0)
 			echo"<td>".$row['status']."</td>";
 			echo"<td>".$row['remarks']."</td>";
 		echo"</tr>";
-		
+
 	}
-	
+
 }
 ?>

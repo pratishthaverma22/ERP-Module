@@ -2,19 +2,16 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
+
 	</head>
 	<body>
 		<h3 style = "color:blue">List of Publications indexed in SCOPUS & above</h3>
-		<?php	
+		<?php
+			require('connection.php');
 			session_start();
 			$count=0;
-			$user = 'root';
-			$pass = '';
-			$dbs = 'phpmyadmin';
 			$sap_id = $_SESSION['sapid'];
-			$db = mysqli_connect('localhost',$user,$pass,$dbs) or die("Unable to connect");
-			$query = "SELECT * FROM data WHERE sap_id = $sap_id AND status = \"completed\""; 
+			$query = "SELECT * FROM data WHERE sap_id = $sap_id AND status = \"completed\"";
 			$result = mysqli_query($db,$query);
 			if(!$result)
 			{
@@ -22,7 +19,7 @@
 			}
 			if(mysqli_num_rows($result)>0)
 			{
-		?>	
+		?>
 		<table style = "border:none">
 			<tr>
 				<th>S.NO.</th>
@@ -45,7 +42,7 @@
 						echo "<td width = \"10%\"><a href=\"details.php?title=".$row['title']."\" target = \"_blank\">view details</a></td>";
 					echo "</tr>";
 				}
-					
+
 			?>
 		</table>
 		<?php
@@ -57,7 +54,7 @@
 		?>
 		<h3 style = "color:red">*Pending List of Publications</h3>
 		<?php
-			$query = "SELECT * FROM data WHERE sap_id = $sap_id AND status = \"Pending\""; 
+			$query = "SELECT * FROM data WHERE sap_id = $sap_id AND status = \"Pending\"";
 			$result = mysqli_query($db,$query);
 			$count = 0;
 			if(!$result)
@@ -66,7 +63,7 @@
 			}
 			if(mysqli_num_rows($result)>0)
 			{
-		?>	
+		?>
 		<table style = "border:none">
 			<tr>
 				<th>S.NO.</th>

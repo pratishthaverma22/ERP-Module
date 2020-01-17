@@ -5,16 +5,13 @@
 	</head>
 	<body>
 		<h3 style = "color:blue">Status of Publication</h3>
-		<?php	
+		<?php
+			require('connection.php');
 			session_start();
 			$count=0;
-			$user = 'root';
-			$pass = '';
-			$dbs = 'phpmyadmin';
 			$sap_id = $_SESSION['sapid'];
 			$title = $_GET['title'];
-			$db = mysqli_connect('localhost',$user,$pass,$dbs) or die("Unable to connect");
-			$query = "SELECT * FROM data WHERE title = \"$title\""; 
+			$query = "SELECT * FROM data WHERE title = \"$title\"";
 			$result = mysqli_query($db,$query);
 			if(!$result)
 			{
@@ -22,8 +19,8 @@
 			}
 			$attribute = array("Title","Authors","Department","Affiliation","Category","Publisher","Month","Year","Identifier","Number","DOI","Indexed In","Volume","Issue","Page No.","URL","Verification Document","Status","Remarks");
 			$row = mysqli_fetch_row($result);
-			
-		?>	
+
+		?>
 		<table style = "border:none">
 			<tr>
 				<th width="8%" align = "center">S.NO.</th>

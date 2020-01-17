@@ -5,6 +5,7 @@
 		<style>
 			html,body {
 				height: 100vh;
+				overflow: auto;
 			}
 			* {
 			  box-sizing: border-box;
@@ -72,7 +73,7 @@
 				background-color: #33b5e5;
 			}
 			li a{
-				
+
 				display: block;
 				color: white;
 				text-align: center;
@@ -101,7 +102,7 @@
 				document.getElementById("frame").innerHTML='<object data="edit.php" ></object>';
 			}
 			function load_report(){
-				document.getElementById("frame").innerHTML='<object data="report_chart.php?tab=r" ></object>';
+				document.getElementById("frame").innerHTML='<object data="report.php?tab=r" ></object>';
 			}
 			function load_manager_report(){
 				document.getElementById("frame").innerHTML='<object data="report.php?tab=tr"></object>';
@@ -120,7 +121,7 @@
 			$desig = $_SESSION['desig'];
 		?>
 		<div class="header">
-			<img src="UPES_Logo.png" alt="www.upes.ac.in" width="20%" height="24%">
+			<img src="./img/UPES_Logo.png" alt="www.upes.ac.in" width="20%" height="24%">
 		</div>
 		<div class="row menu">
 			<div class="col-12">
@@ -154,8 +155,8 @@
 			</ul>
 			</div>
 			<div class="col-10" id="frame" src="view.php">
-				
+
 			</div>
-		</div>	
+		</div>
 	</body>
 </html>

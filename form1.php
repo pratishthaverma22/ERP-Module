@@ -4,24 +4,21 @@
     <head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Research Form</title>
-		<link rel="stylesheet" href="form.css">
+		<link rel="stylesheet" href="./css/form.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
     <body>
 		<?php
-			session_start();
+    require('connection.php');
+      session_start();
 			$mon=array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
-			$user = 'root';
-			$pass = '';
-			$dbs = 'phpmyadmin';
 			$sap_id = $_SESSION['sapid'];
 			$title = $_GET['title'];
-			$db = mysqli_connect('localhost',$user,$pass,$dbs) or die("Unable to connect");
 			$query = "SELECT * FROM data WHERE sap_id = $sap_id AND title = '$title'";
-			$result = mysqli_query($db,$query);	
+			$result = mysqli_query($db,$query);
 			while($row = mysqli_fetch_assoc($result))
-			{				
+			{
 				$authors = $row['authors'];
 				$department = $row['department'];
 				$affiliation= $row['affiliation'];
@@ -47,7 +44,7 @@
 				$cat = array("Journal","Conference","Book Chapter","Book","Magazine","News Paper","White Paper","Patent","Transaction");
 				$ver = array("Certificate","");
 				$sta = array("Submitted","Accepted","In-print","Published");
-			}					
+			}
 		?>
 		<form action="" method="POST">
 			<fieldset style="background-color:#AFEEEE">
@@ -64,12 +61,12 @@
 						if($deps == $department)
 							continue;
 						echo "<option value=\"$deps\">".$deps."</option>";
-					
+
 					}
 					?>
 					</select>
 				</div>
-				
+
 				<div class="rightdiv">Affiliation: <input type="text" name="affiliation" value = "<?php echo $affiliation;?>"></div>
 			</fieldset>
 			<fieldset style="background-color:#AFEEEE"">
@@ -80,13 +77,13 @@
 						<option value = "<?php echo $identifier;?>" select = "selected"><?php echo $identifier;?></option>
 						<?php
 						foreach($ide as $iden)
-						{	
+						{
 							if($iden == $identifier)
 								continue;
 							echo "<option value =\"$iden\">".$iden."</option>";
 						}
 						?>
-					
+
 					</select>
 				</div>
 				<div class="rightdiv">Number:&nbsp; <input type="text" name="number" value = <?php echo $number;?>></div>
@@ -95,7 +92,7 @@
 						<option value = "<?php echo $indexed;?>" select = "selected"><?php echo $indexed;?></option>
 						<?php
 						foreach($ind as $index)
-						{	
+						{
 							if($index == $indexed)
 								continue;
 							echo "<option value =\"$index\">".$index."</option>";
@@ -108,8 +105,8 @@
 				<div class="middlediv">Page No.: &ensp;<input type="text" name="pageno" value = "<?php echo $pageno;?>"></div>
 				<div class="leftdiv">DOI:&ensp;&ensp;&ensp;&nbsp; <input type="text" name="doi" value = "<?php echo $doi;?>"></div>
 				<div class="rightdiv">URL:&ensp;&ensp;&ensp; <input type="text" name="url" value = "<?php echo $url;?>"></div>
-				
-				
+
+
 				<div class="rightdiv">Month:&ensp;&ensp;&ensp;
 					<select name="month" id="month">
 						<option value = "<?php echo $month;?>" select="selected"><?php echo $month;?></option>
@@ -149,7 +146,7 @@
 							if($vers == $verification)
 								continue;
 							echo "<option value = \"$vers\">".$vers."</option>";
-						}	
+						}
 						?>
 						</select>
 				</div>
@@ -205,6 +202,6 @@
 			}
 		}
 		?>
-		
+
 	</body>
 </html>

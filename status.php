@@ -10,7 +10,7 @@
 			var httprequest = new XMLHttpRequest();
 			httprequest.onreadystatechange = function()
 			{
-				if (this.readyState == 4 && this.status == 200) 
+				if (this.readyState == 4 && this.status == 200)
 				{
 				document.getElementById("try").innerHTML = this.responseText;
 				}
@@ -21,18 +21,15 @@
 		</script>
 	</head>
 	<body>
-		<?php	
+		<?php
 			session_start();
+			require('connection.php');
 			$count=0;
-			$user = 'root';
-			$pass = '';
-			$dbs = 'phpmyadmin';
 			$sap_id = $_SESSION['sapid'];
-			$db = mysqli_connect('localhost',$user,$pass,$dbs) or die("Unable to connect");
 		?>
 		<h3 style = "color:red">*Pending List of Publications</h3>
 		<?php
-			$query = "SELECT * FROM data WHERE status = \"Pending\""; 
+			$query = "SELECT * FROM data WHERE status = \"Pending\"";
 			$result = mysqli_query($db,$query);
 			$count = 0;
 			if(!$result)
@@ -41,7 +38,7 @@
 			}
 			if(mysqli_num_rows($result)>0)
 			{
-		?>	
+		?>
 		<table style = "border:none">
 			<tr>
 				<th>S.NO.</th>
@@ -66,8 +63,8 @@
 						echo "<td width = \"10%\"><select name=\"status\" id=\"$title\" onchange=\"change_value(this.id)\">
 													<option value=\"Pending\" select=\"selected\">Pending</option>
 													<option value=\"Completed\">Completed</option></select>";?>
-				
-			
+
+
 		<?php
 					echo "</tr>";
 				}
@@ -82,6 +79,6 @@
 		?>
 		<div id="try">
 		</div>
-		
+
 	</body>
 </html>

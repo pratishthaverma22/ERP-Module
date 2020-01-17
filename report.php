@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="all.css">
+<link rel="stylesheet" href="./css/all.css">
 <style type = "text/css">
 #filter{
 	height:380px;
@@ -31,14 +31,14 @@ $tab = $_GET['tab'];
 $_SESSION['tab'] = $tab;
 $sap = $_SESSION["sapid"];
 $dep = $_SESSION["dep"];
-$mon=array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");	
+$mon=array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
 ?>
 <h1>REPORT<h1>
 <h3>Publications indexed in SCOPUS & above</h3>
 <button style="float:left;" onclick="filter();">Filter</button>
 <br>
 <br>
-<div id="try">	
+<div id="try">
 
 </div>
 <div style = "align:right;position:absolute; left:5%; top:23%" id ="filter">
@@ -48,9 +48,9 @@ if($desig == "Manager" and $tab == "tr")
 	{
 		?>
 		Name:<input type = "text" name="name" id="name"><br><br>
-		<?php	
+		<?php
 	}
-?>		
+?>
 Category:<select name = "category" id ="category">
 			<option value = "" select = "selected" name= "category" >Category</option>
 			<option value="Journal" >Journal</option>
@@ -61,14 +61,14 @@ Category:<select name = "category" id ="category">
 			<option value="News Paper">News Paper</option>
 			<option value="White Paper">White Paper</option>
 			<option value="Patent">Patent</option>
-			<option value="Transaction">Transaction</option>			
+			<option value="Transaction">Transaction</option>
 			</select><br><br>
 Month:<select name="month" id="month">
 						<option value="" select="selected">Month</option>
 						<?php
 							foreach($mon as $month)
 							{
-							
+
 								echo "<option value=\"$month\">".$month."</option>";
 							}
 						?>
@@ -101,7 +101,7 @@ Remarks:<select name="remarks" id="remarks">
 <input style="right:5%; position:absolute" type= "submit" name = "back" onclick="hide();" value = "Back">
 </div>
 <script>
-function applyfilter()	
+function applyfilter()
 {
 
 	document.getElementById("filter").style.display = "none";
