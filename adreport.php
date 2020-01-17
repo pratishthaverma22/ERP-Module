@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="all.css">
+<link rel="stylesheet" href="./css/all.css">
 <style type = "text/css">
 #filter{
 	height:380px;
@@ -32,7 +32,7 @@ function hide()
 {
 	document.getElementById("filter").style.display = "none";
 }
-function applyfilter()	
+function applyfilter()
 {
 	document.getElementById("filter").style.display = "none";
 	var name = document.getElementById("name").value;
@@ -64,7 +64,7 @@ function applyfilter()
 	var httprequest = new XMLHttpRequest();
 	httprequest.onreadystatechange = function(){
 		if (this.readyState == 4 && this.status == 200) {
-			
+
     document.getElementById("try").innerHTML = this.responseText;
     }
   };
@@ -76,16 +76,13 @@ function applyfilter()
 </head>
 <body onload="applyfilter();">
 <?php
+require('connection.php');
 session_start();
 $desig = $_SESSION['desig'];
 $tab = $_GET['tab'];
 $_SESSION['tab'] = $tab;
 $sap = $_SESSION["sapid"];
 $dep = $_SESSION["dep"];
-$user = "root";
-$pass = "";
-$dbs = "phpmyadmin";
-$db = mysqli_connect("localhost",$user,$pass,$dbs);
 $mon=array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
 $category=array("Journal","Conference","Book Chapter","Book","Magazine","News Paper","White Paper","Patent","Transaction");
 $indexed=array("SCI","Scopus","eSCI","UGC Approved","Other");
@@ -102,7 +99,7 @@ $count = 0;
 </div>
 <div style = "align:right;position:absolute; left:5%; top:23%" id ="filter">
 <h3>Filter</h3>
-		
+
 Name:<input type = "text" name="name" id="name"><br><br>
 
 Month:<select name="month" id="month">
@@ -110,7 +107,7 @@ Month:<select name="month" id="month">
 						<?php
 							foreach($mon as $month)
 							{
-							
+
 								echo "<option value=\"$month\">".$month."</option>";
 							}
 						?>

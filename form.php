@@ -4,20 +4,17 @@
     <head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Research Form</title>
-		<link rel="stylesheet" href="form.css">
+		<link rel="stylesheet" href="./css/form.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
     <body>
 		<?php
+    require('connection.php');
 			session_start();
 			$mon=array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
-			$user = 'root';
-			$pass = '';
-			$dbs = 'phpmyadmin';
 			$sap_id = $_SESSION['sapid'];
 			#$title = $_GET['title'];
-			$db = mysqli_connect('localhost',$user,$pass,$dbs) or die("Unable to connect");
 		?>
 		<form action="" method="POST">
 			<fieldset style="background-color:#AFEEEE">
@@ -34,7 +31,7 @@
 						<option value="Virtualization">Virtualization</option>
 					</select>
 				</div>
-				
+
 				<div class="rightdiv">Affiliation: <input type="text" name="affiliation"></div>
 			</fieldset>
 			<fieldset style="background-color:#AFEEEE"">
@@ -64,8 +61,8 @@
 				<div class="middlediv">Page No.: &ensp;<input type="text" name="pageno"></div>
 				<div class="leftdiv">DOI:&ensp;&ensp;&ensp;&nbsp; <input type="text" name="doi"></div>
 				<div class="rightdiv">URL:&ensp;&ensp;&ensp; <input type="text" name="url"></div>
-				
-				
+
+
 				<div class="rightdiv">Month:&ensp;&ensp;&ensp;
 					<select name="month" id="month">
 						<option value="<?php echo date("M");?>" select="selected"><?php echo date("M");?></option>
@@ -149,8 +146,8 @@
 				else
 				{
 					echo "New record created successfully";
-					
-					
+
+
 				}
 			}
 		?>

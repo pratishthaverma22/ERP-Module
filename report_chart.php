@@ -3,9 +3,9 @@
       <title>Highcharts Tutorial</title>
       <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
       </script>
-      <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0-rc.1/Chart.js"></script>  
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0-rc.1/Chart.js"></script>
    </head>
-   
+
    <body>
       <div class="container">
   <h2>Chart.js — Pie Chart Demo</h2>
@@ -14,15 +14,9 @@
   </div>
 </div>
 	  <?php
-
-$sap =	"40001713";
-
+    require('connection.php');
+    $sap =	"40001713";
 $count = 0;
-
-$user = "root";
-$pass = "";
-$dbs = "phpmyadmin";
-$db = mysqli_connect("localhost",$user,$pass,$dbs);
 $indexed=array("SCI","Scopus","eSCI","UGC Approved","Other");
 foreach($indexed as $index)
 {
@@ -63,7 +57,7 @@ var myChart = new Chart(ctx, {
         "#95a5a6",
         "#9b59b6",
         "#f1c40f",
-       
+
       ],
       data: data
     }]
@@ -71,5 +65,5 @@ var myChart = new Chart(ctx, {
 });
       </script>
    </body>
-   
+
 </html>

@@ -14,15 +14,10 @@
   </div>
 </div>
 	  <?php
-
+    require('connection.php');
 $sap =	"40001713";
 
 $count = 0;
-
-$user = "root";
-$pass = "";
-$dbs = "phpmyadmin";
-$db = mysqli_connect("localhost",$user,$pass,$dbs);
 $indexed=array("SCI","Scopus","eSCI","UGC Approved","Other");
 foreach($indexed as $index)
 {

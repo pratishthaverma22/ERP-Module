@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="all.css">
+<link rel="stylesheet" href="./css/all.css">
 <style type = "text/css">
 #filter{
 	height:380px;
