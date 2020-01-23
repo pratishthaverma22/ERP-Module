@@ -1,22 +1,24 @@
-.leftdiv { 
-    float: left; 
-} 
-.middlediv { 
-    float: left; 
-} 
-.rightdiv { 
-    float: left; 
-} 
+.leftdiv {
+    float: left;
+    padding : 1%;
+    background-color: 009900;
+    width: 30%;
+}
+.middlediv {
+    float: left;
+    padding : 1%;
+    background-color: 009900;
+    width: 30%;
+}
+.rightdiv {
+    float: left;
+    padding : 1%;
+    background-color: 009900;
+    width: 30%;
+}
 div.centerdiv{
 	width:100%;
 }
-	
-div{ 
-    padding : 1%; 
-    background-color: 009900; 
-    width: 30%; 
-	float:left;
-} 
 body{
 	font-size:20px;
 }

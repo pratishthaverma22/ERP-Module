@@ -6,6 +6,12 @@
         <title>Research Form</title>
 		<link rel="stylesheet" href="./css/form.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+    function back(){
+        window.parent.$("#frame").html("");
+        window.parent.$("#frame").load('edit.php');
+          }
+          </script>
     </head>
 
     <body>
@@ -34,7 +40,7 @@
 
 				<div class="rightdiv">Affiliation: <input type="text" name="affiliation"></div>
 			</fieldset>
-			<fieldset style="background-color:#AFEEEE"">
+			<fieldset style="background-color:#AFEEEE">
 			<legend class= "bfont">Publication Information</legend>
 				<div class="middlediv">Publisher:&ensp; <input type="text" name="publisher"></div>
 				<div class="middlediv">Identifier:
@@ -91,7 +97,7 @@
 					</select>
 				</div>
 			</fieldset>
-			<fieldset style="background-color:#AFEEEE"">
+			<fieldset style="background-color:#AFEEEE">
 				<legend class= "bfont">Submission Information</legend>
 				<div class="leftdiv">Verification Document:
 					<select name="verification" id="verification">
@@ -108,8 +114,8 @@
 						<option value="Published">Published</option>
 					</select>
 				</div>
-				<div class="rightdiv"><input type="submit" value="Submit" onclick = "location.href='edit.php'" name="submit">
-				<input type = "button" onclick = "location.href='edit.php'" value = "Back">
+				<div class="rightdiv"><input type="submit" value="Submit" onclick = "back()" name="submit">
+				<input type = "button" onclick = "back()" value = "Back">
 				</div>
 			</fieldset>
 		</form>
