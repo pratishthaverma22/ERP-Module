@@ -1,27 +1,41 @@
 <?php
     session_start();
     require('connection.php');
+    $department=$_SESSION['dep'];
     $desig = $_SESSION['desig'];
     $sap = $_SESSION['sapid'];
+    $tab = $_GET['tab'];
+    $labels=[];
+    $data=[];
     $count = 0;
     $indexed=array("SCI","Scopus","eSCI","UGC Approved","Other");
-    foreach($indexed as $index)
+    if($tab=='r')
     {
-    $query = "SELECT * FROM data WHERE sap_id = $sap AND indexed = '".$index."'";
-    $result = mysqli_query($db,$query);
-    if(!$result)
+      foreach($indexed as $index)
+      {
+        $query = "SELECT * FROM data WHERE sap_id = $sap AND indexed = '$index'";
+        $labels = $indexed;
+        $result = mysqli_query($db,$query);
+        $count=(int)mysqli_num_rows($result);
+        array_push($data,$count);
+      }
+    }
+    if($tab=='tr')
     {
-    	die("unable to connect");
+      $query = "SELECT * FROM login WHERE department = '$department'";
+      $result = mysqli_query($db,$query);
+      while($row = mysqli_fetch_assoc($result))
+      {
+        array_push($labels,$row['name']);
+        $sapid= $row['sap_id'];
+        $query1 = "SELECT * FROM data WHERE department = '$department' AND  sap_id = $sapid ";
+        $result1 = mysqli_query($db,$query1);
+        $count = (int)mysqli_num_rows($result);
+        array_push($data,$count);
+
+      }
     }
-    $ind["$index"]=mysqli_num_rows($result);
-    }
- 	  $SCI = (int)$ind['SCI'];
-		$SCOPUS = (int)$ind['Scopus'];
-		$eSCI = (int)$ind['eSCI'];
-		$UGC =(int)$ind['UGC Approved'];
-		$other =(int)$ind['Other'];
-		$data =array($SCI,$SCOPUS,$eSCI,$UGC,$other);
-		$labels = array("SCI","SCOPUS","eSCI","UGC","other");
+
     $return_data = array("data"=>$data,"labels"=>$labels);
     echo json_encode($return_data);
-    ?>
+?>

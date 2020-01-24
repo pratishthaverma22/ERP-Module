@@ -14,18 +14,18 @@
 			{
 				$result  = NULL;
 				$login=$_POST["loginid"];
-				$query = "SELECT * FROM login WHERE ID = $login";
+				$query = "SELECT * FROM login WHERE sap_id = $login";
 				$result = mysqli_query($db,$query);
 				if(!$result)
 				{
 					die("Unable to connect");
 				}
-				$row = mysqli_fetch_row($result);
-				if($row[0] == $_POST['loginid'] && $row[1] == $_POST['password'])
+				$row =  mysqli_fetch_assoc($result);
+				if($row['sap_id'] == $_POST['loginid'] && $row['password'] == $_POST['password'])
 				{
 					$_SESSION['sapid'] = $_POST['loginid'];  //sapid fetch
-					$_SESSION['desig'] = $row[2];            //designation fetch
-					$_SESSION['dep'] = $row[3];              //department fetch
+					$_SESSION['desig'] = $row['designation'];            //designation fetch
+					$_SESSION['dep'] = $row['department'];              //department fetch
 					header("location:dashboard.php");
 				}
 				else
