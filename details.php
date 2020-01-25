@@ -42,7 +42,7 @@
 			?>
 		</table>
 		<?php
-			if($row[18] == "pending")
+			if($row[18] == "Pending")
 				echo "<h4 style=\"color:red\"> **update missing information or upload required document</h4>";
 		?>
 	</body>
