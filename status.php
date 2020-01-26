@@ -2,21 +2,21 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-											<script>
-		function change_value(x)
-		{
-			var value = document.getElementById(x).value;
-			var query = "UPDATE data SET status = '"+value+"' WHERE title = '"+x+"'";
-			var httprequest = new XMLHttpRequest();
-			httprequest.onreadystatechange = function()
+		<script>
+			function change_value(x)
 			{
-				if (this.readyState == 4 && this.status == 200)
+				var value = document.getElementById(x).value;
+				var query = "UPDATE data SET remarks = '"+value+"' WHERE title = '"+x+"'";
+				var httprequest = new XMLHttpRequest();
+				httprequest.onreadystatechange = function()
 				{
-				document.getElementById("try").innerHTML = this.responseText;
-				}
-			};
-			httprequest.open("GET", "statuschange.php?q="+query, true);
-			httprequest.send();
+					if (this.readyState == 4 && this.status == 200)
+					{
+						document.getElementById("try").innerHTML = this.responseText;
+					}
+				};
+				httprequest.open("GET", "statuschange.php?q="+query, true);
+				httprequest.send();
 			}
 		</script>
 	</head>
@@ -29,7 +29,7 @@
 		?>
 		<h3 style = "color:red">*Pending List of Publications</h3>
 		<?php
-			$query = "SELECT * FROM data WHERE status = \"Pending\"";
+			$query = "SELECT * FROM data WHERE remarks = \"Pending\"";
 			$result = mysqli_query($db,$query);
 			$count = 0;
 			if(!$result)

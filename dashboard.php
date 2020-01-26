@@ -9,11 +9,14 @@
 		<link rel="stylesheet", type="text/css", href="./css/dashboard.css">
 		<script>
 			function load_page(page){
+				$('#frame').css("display","block");
+				$('#chart').css("display","none");
 			$('#frame').load(page);
 			}
 			function load_chart(page)
 			{
-				$('#frame').html("<canvas id='myChart'></canvas>");
+				$('#frame').css("display","none");
+				$('#chart').css("display","block");
 				$.ajax({
 					url:page,
 					complete: function (response) {
@@ -21,7 +24,7 @@
 						for (var i in result.data) {
 						color.push(dynamicColors());
 						}
-						var ctx = document.getElementById("myChart").getContext('2d');
+						var ctx = document.getElementById("myChart");
 						var myChart = new Chart(ctx, {
 							type: 'pie',
 							data: {
@@ -31,34 +34,7 @@
 									data: result.data
 								}]
 							},
-							options: {
-							  hover: {
-							    onHover: function(e,a) {
-							     /* $("#canvas1").css("cursor", e[0] ? "pointer" : "default");
-
-							       without jquery it can be like this:*/
-							        var el = document.getElementById("myChart");
-							        el.style.cursor = a[0] ? "pointer" : "default";
-
-							    }
-							  },
-							  plugins:{
-							    datalabels:{
-							      labels: {
-							                  value: {
-							                      color: 'red',
-							                      font:{size: '20'}
-							                  }
-							              }
-							    }
-							  },
-							  onClick: function(evt, activePoint){
-							    var selectedIndex = activePoint[0]._index;
-							    var label = this.data.labels[selectedIndex];
-							    var value = this.data.datasets[0].data[selectedIndex];
-							    window.open("report.php?index="+label,"_blank");
-							  }
-							}
+							options: options
 
 						});
 					},
@@ -90,17 +66,23 @@
 					<li><a href="#" onclick="load_page('edit.php')">Edit</a></li>
 					<li><a href="#" onclick="load_chart('chart.php?tab=r')">Report</a></li>
 					<?php
-					if($desig=="Manager")
+					if($desig=="HOD")
 					{
 					?>
-					<li><a href="#" onclick="load_chart('chart.php?tab=tr')">Team Report</a></li>
+					<li><a href="#" onclick="load_chart('chart.php?tab=dr')">Department Report</a></li>
 					<?php
 					}
-					if($desig=="Administrator")
+					if($desig=="Assistant Dean")
 					{
 					?>
 					<li><a href="#" onclick="load_page('status.php?tab=ad')">Status Review</a></li>
-					<li><a href="#" onclick="load_page('status.php?tab=ad')">Overall Report</a></li>
+					<li><a href="#" onclick="load_chart('status.php?tab=ad')">Overall Report</a></li>
+					<?php
+					}
+					if($desig=="Dean")
+					{
+					?>
+					<li><a href="#" onclick="load_chart('status.php?tab=d')">Overall Report</a></li>
 					<?php
 					}
 					?>
@@ -108,7 +90,11 @@
 			</div>
 		</div>
 		<div class="col-3" id="frame">
-
+		</div>
+		<div class="col-3" id="chart">
+			<div class="chart">
+				<canvas id='myChart' width='20px'></canvas>
+			</div>
 		</div>
 	</body>
 </html>

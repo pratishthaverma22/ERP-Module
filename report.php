@@ -29,7 +29,6 @@ function filter()
 session_start();
 $desig = $_SESSION['desig'];
 $index = $_GET['index'];
-$tab = $_SESSION['tab'];
 $sap = $_SESSION["sapid"];
 $dep = $_SESSION["dep"];
 $mon=array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
@@ -44,14 +43,7 @@ $mon=array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","De
 </div>
 <div style = "align:right;position:absolute; left:5%; top:23%" id ="filter">
 <h3>Filter</h3>
-<?php
-if($desig == "Manager" and $tab == "tr")
-	{
-		?>
-		Name:<input type = "text" name="name" id="name"><br><br>
-		<?php
-	}
-?>
+
 Category:<select name = "category" id ="category">
 			<option value = "" select = "selected" name= "category" >Category</option>
 			<option value="Journal" >Journal</option>
@@ -104,13 +96,7 @@ Remarks:<select name="remarks" id="remarks">
 <script>
 function applyfilter()
 {
-	if(tab=="tr")
-	{
-		var query = "SELECT * FROM data where department = '<?php echo $dep; ?>'";
-	}
-	else{
 	var query = "SELECT * FROM data WHERE sap_id = '<?php echo $sap; ?>'";
-	}
 	var index = "<?php echo $index; ?>";
 	query=query.concat(" AND indexed= '"+index+"'");
 	document.getElementById("filter").style.display = "none";
@@ -129,7 +115,6 @@ function applyfilter()
 	var identifier = document.getElementById("identifier").value;
 	var indexed = document.getElementById("indexed").value;
 	var remarks = document.getElementById("remarks").value;
-	var tab = "<?php echo $tab; ?>";
 
 	if(category!="")
 	{
