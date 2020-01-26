@@ -104,7 +104,15 @@ Remarks:<select name="remarks" id="remarks">
 <script>
 function applyfilter()
 {
+	if(tab=="tr")
+	{
+		var query = "SELECT * FROM data where department = '<?php echo $dep; ?>'";
+	}
+	else{
+	var query = "SELECT * FROM data WHERE sap_id = '<?php echo $sap; ?>'";
+	}
 	var index = "<?php echo $index; ?>";
+	query=query.concat(" AND indexed= '"+index+"'");
 	document.getElementById("filter").style.display = "none";
 	var name_element = document.getElementById("name")
 	if(name_element)
@@ -122,13 +130,7 @@ function applyfilter()
 	var indexed = document.getElementById("indexed").value;
 	var remarks = document.getElementById("remarks").value;
 	var tab = "<?php echo $tab; ?>";
-	if(tab=="tr")
-	{
-		var query = "SELECT * FROM data where department = '<?php echo $dep; ?>'";
-	}
-	else{
-	var query = "SELECT * FROM data WHERE sap_id = '<?php echo $sap; ?>'";
-	}
+
 	if(category!="")
 	{
 		query=query.concat(" AND category = '"+category+"'");

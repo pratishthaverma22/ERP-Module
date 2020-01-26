@@ -19,7 +19,7 @@
 			require('connection.php');
 			session_start();
 			$sap_id = $_SESSION['sapid'];
-			$query = "SELECT title FROM data WHERE sap_id = $sap_id AND status=\"Pending\"";
+			$query = "SELECT title FROM data WHERE sap_id = $sap_id AND remarks=\"Pending\"";
 			$result = mysqli_query($db,$query);
 			if(!$result)
 			{

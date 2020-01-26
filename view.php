@@ -10,7 +10,7 @@
 			session_start();
 			$count=0;
 			$sap_id = $_SESSION['sapid'];
-			$query = "SELECT * FROM data WHERE sap_id = $sap_id AND status = \"Completed\"";
+			$query = "SELECT * FROM data WHERE sap_id = $sap_id AND remarks = \"Completed\"";
 			$result = mysqli_query($db,$query);
 			if(!$result)
 			{
@@ -23,7 +23,7 @@
 			<tr>
 				<th>S.NO.</th>
 				<th>TITLE</th>
-				<th>AUTHORS</th>
+				<th>OTHER AUTHORS</th>
 				<th>MONTH</th>
 				<th>YEAR</th>
 				<th></th>
@@ -53,7 +53,7 @@
 		?>
 		<h3 style = "color:red">*Pending List of Publications</h3>
 		<?php
-			$query = "SELECT * FROM data WHERE sap_id = $sap_id AND status = \"Pending\"";
+			$query = "SELECT * FROM data WHERE sap_id = $sap_id AND remarks = \"Pending\"";
 			$result = mysqli_query($db,$query);
 			$count = 0;
 			if(!$result)
@@ -67,7 +67,7 @@
 			<tr>
 				<th>S.NO.</th>
 				<th>TITLE</th>
-				<th>AUTHORS</th>
+				<th>OTHER AUTHORS</th>
 				<th>MONTH</th>
 				<th>YEAR</th>
 				<th></th>
