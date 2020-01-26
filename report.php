@@ -26,11 +26,27 @@ function filter()
 </head>
 <body onload="applyfilter();">
 <?php
+require('connection.php');
 session_start();
 $desig = $_SESSION['desig'];
-$index = $_GET['index'];
+$label = $_GET['label'];
 $sap = $_SESSION["sapid"];
 $dep = $_SESSION["dep"];
+$tab = $_SESSION["tab"];
+if($tab=='r'){
+$query = "SELECT * FROM data WHERE sap_id = ".$sap." AND indexed= '".$label."'";
+}
+else if($tab=='tr')
+{
+$query1 = "SELECT * FROM login WHERE name= '".$label."'";
+$result = mysqli_query($db,$query1);
+while($row = mysqli_fetch_assoc($result))
+{$sapid= $row['sap_id'];}
+$query = "SELECT * FROM data WHERE sap_id = ".$sapid;
+}
+else if($tab=='d'){
+	$query = "SELECT * FROM data WHERE department='".$label."'";
+}
 $mon=array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
 ?>
 <h1>REPORT<h1>
@@ -96,9 +112,8 @@ Remarks:<select name="remarks" id="remarks">
 <script>
 function applyfilter()
 {
-	var query = "SELECT * FROM data WHERE sap_id = '<?php echo $sap; ?>'";
-	var index = "<?php echo $index; ?>";
-	query=query.concat(" AND indexed= '"+index+"'");
+
+	var query = "<?php echo $query; ?>";
 	document.getElementById("filter").style.display = "none";
 	var name_element = document.getElementById("name")
 	if(name_element)

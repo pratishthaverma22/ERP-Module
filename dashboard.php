@@ -69,20 +69,20 @@
 					if($desig=="HOD")
 					{
 					?>
-					<li><a href="#" onclick="load_chart('chart.php?tab=dr')">Department Report</a></li>
+					<li><a href="#" onclick="load_chart('chart.php?tab=tr')">Department Report</a></li>
 					<?php
 					}
 					if($desig=="Assistant Dean")
 					{
 					?>
 					<li><a href="#" onclick="load_page('status.php?tab=ad')">Status Review</a></li>
-					<li><a href="#" onclick="load_chart('status.php?tab=ad')">Overall Report</a></li>
+					<li><a href="#" onclick="load_chart('chart.php?tab=d')">Overall Report</a></li>
 					<?php
 					}
 					if($desig=="Dean")
 					{
 					?>
-					<li><a href="#" onclick="load_chart('status.php?tab=d')">Overall Report</a></li>
+					<li><a href="#" onclick="load_chart('chart.php?tab=d')">Overall Report</a></li>
 					<?php
 					}
 					?>

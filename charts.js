@@ -30,6 +30,6 @@ var options= {
     var selectedIndex = activePoint[0]._index;
     var label = this.data.labels[selectedIndex];
     var value = this.data.datasets[0].data[selectedIndex];
-    window.open("report.php?index="+label,"_blank");
+    window.open("report.php?label="+label,"_blank");
   }
 }
