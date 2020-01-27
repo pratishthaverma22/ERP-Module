@@ -8,7 +8,7 @@ $dep = $_SESSION["dep"];
 $mon=array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
 $category=array("Journal","Conference","Book Chapter","Book","Magazine","News Paper","White Paper","Patent","Transaction");
 $indexed=array("SCI","Scopus","eSCI","UGC Approved","Other");
-$department=array("Informatics","Systematics","Cybernetics","Virtualization","Computer Application");
+$department=array("Informatics","Systemics","Cybernetics","Virtualization","Computer Application");
 $alpharange = range('A','Z');
 $count = 0;
 ?>
@@ -20,7 +20,7 @@ $count = 0;
 		</tr>
 		<tr>
 			<th width="14%">Informatics</th>
-			<th width="14%">Systematics</th>
+			<th width="14%">Systemics</th>
 			<th width="14%">Cybernetics</th>
 			<th width="14%">Virtualization</th>
 			<th width="14%">Computer Application</th>
@@ -41,7 +41,7 @@ $count = 0;
 			?>
 					<td>
 				<?php
-					$query="SELECT * FROM data WHERE department = 'Informatics' OR department = 'Systematics' OR department = 'Cybernetics' or department = 'Virtualization' or department = 'Computer Application'".$filter;
+					$query="SELECT * FROM data WHERE department = 'Informatics' OR department = 'Systemics' OR department = 'Cybernetics' or department = 'Virtualization' or department = 'Computer Application'".$filter;
 					$result=mysqli_query($db,$query);
 					$count=mysqli_num_rows($result);
 					echo "<a href=\"viewreport.php?query=$query\" target = \"_blank\">$count</a>";

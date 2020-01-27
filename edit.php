@@ -9,7 +9,7 @@
 					window.parent.$("#frame").load('form.php');
 						}
 			function load_form(title){
-				var page='form1.php?title='+title;
+				var page="form1.php?title="+title;
 				window.parent.$("#frame").load(page);
 			}
 		</script>
@@ -39,7 +39,7 @@
 
 					 echo "<tr>";
 						echo "<td>".$rows["title"]."</td>";
-						$title = $rows["title"];
+						$title = urlencode($rows["title"]);
 					    echo "<td><input type=\"button\" value = \"edit\" onclick=\"load_form('$title')\">";
 					echo "</tr>";
 				}

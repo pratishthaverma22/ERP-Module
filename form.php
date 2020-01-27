@@ -6,7 +6,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link rel="stylesheet" href="./css/form.css">
   <script>
-
   function back(){
     window.parent.$("#frame").html("");
     window.parent.$("#frame").load('edit.php');
@@ -20,19 +19,20 @@
 		$month=array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
     $category=array("Journal","Conference","Book Chapter","Book","Magazine","News Paper","White Paper","Patent","Transaction");
     $indexed=array("SCI","Scopus","eSCI","UGC Approved","Other");
-    $department=array("Informatics","Systematics","Cybernetics","Virtualization","Computer Application");
+    $department=array("Informatics","Systemics","Cybernetics","Virtualization","Computer Application");
 		$sap_id = $_SESSION['sapid'];
 		#$title = $_GET['title'];
 	?>
 	<form method="POST" onsubmit="submit_form();">
 		<fieldset style="background-color:#AFEEEE">
       <legend class= "bfont">General Information</legend>
-  		<div class="centerdiv" align="center">
-        Title:<br>
-        <textarea required rows="4" cols="100" name="title" id="title" onchange="validate();"></textarea>
+  		<div class="centerdiv">
+        &ensp;Title:&ensp;&ensp;&ensp;
+        <textarea required rows="2" cols="100" name="title" id="title" onchange="validate();"></textarea>
       </div>
-  		<div class="leftdiv">
-        Other Authors:
+  		<div class="leftdiv author">
+        List of Authors:
+        <span class="tooltiptext">List of Authors should be typed as they appear in the paper</span>
         <input type="text" name = "authors" id="authors">
       </div>
     	<div class="middlediv">Department:
@@ -52,7 +52,7 @@
     </fieldset>
   	<fieldset style="background-color:#AFEEEE">
       <legend class= "bfont">Publication Information</legend>
-    	<div class="middlediv">
+    	<div class="leftdiv">
         Publisher:&ensp;
         <input type="text" name="publisher" id="publisher">
       </div>
@@ -68,7 +68,7 @@
         Number:&nbsp;
         <input type="text" name="number" id="number">
       </div>
-  		<div class="middlediv">Indexed in:
+  		<div class="leftdiv">Indexed in:
         <select name="indexed" id="indexed">
           <?php
           foreach($indexed as $ind)
@@ -78,19 +78,19 @@
           ?>
   			</select>
   		</div>
-  		<div class="rightdiv">
+  		<div class="middlediv">
         Volume: &ensp;
         <input type="text" name="value" id="volume">
       </div>
-  		<div class="leftdiv">
+  		<div class="rightdiv">
         Issue: &ensp;&ensp;&ensp;
         <input type="text" name="issue" id="issue">
       </div>
-  		<div class="middlediv">
+  		<div class="leftdiv">
         Page No.: &ensp;
         <input type="text" name="pageno" id="pageno">
       </div>
-  		<div class="leftdiv">
+  		<div class="middlediv">
         DOI:&ensp;&ensp;&ensp;&nbsp;
         <input type="text" name="doi" id="doi">
       </div>
@@ -98,7 +98,7 @@
         URL:&ensp;&ensp;&ensp;
         <input type="text" name="url" id="url">
       </div>
-      <div class="rightdiv">
+      <div class="leftdiv">
         Month:&ensp;&ensp;&ensp;
         <select name="month" id="month">
           <option value="<?php echo date("M");?>" select="selected"><?php echo date("M");?></option>
@@ -112,11 +112,11 @@
   				?>
         </select>
       </div>
-  		<div class="leftdiv">
+  		<div class="middlediv">
         Year: &ensp;&ensp;&ensp;&nbsp;
         <input type="text" id="year" name="year" value="<?php echo date("Y");?>">
       </div>
-  		<div class="leftdiv">
+  		<div class="rightdiv">
         Category:
         <select name="category" id="category">
           <?php

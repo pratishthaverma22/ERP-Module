@@ -86,7 +86,7 @@ $dep = $_SESSION["dep"];
 $mon=array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
 $category=array("Journal","Conference","Book Chapter","Book","Magazine","News Paper","White Paper","Patent","Transaction");
 $indexed=array("SCI","Scopus","eSCI","UGC Approved","Other");
-$department=array("Informatics","Systematics","Cybernetics","Virtualization","Computer Application");
+$department=array("Informatics","Systemics","Cybernetics","Virtualization","Computer Application");
 $alpharange = range('A','Z');
 $count = 0;
 ?>

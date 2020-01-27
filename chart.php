@@ -10,7 +10,7 @@
     $data=[];
     $count = 0;
     $indexed=array("SCI","Scopus","eSCI","UGC Approved","Other");
-    $dep=array("Informatics","Systematics","Cybernetics","Virtualization","Computer Application");
+    $dep=array("Informatics","Systemics","Cybernetics","Virtualization","Computer Application");
     if($tab=='r')
     {
       foreach($indexed as $index)
