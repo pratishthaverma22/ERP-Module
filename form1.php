@@ -49,7 +49,7 @@
 		$sta = array("Submitted","Accepted","In-print","Published");
 	}
 	?>
-	<form method="POST" action="" onsubmit="submit_form();">
+	<form method="POST">
     <fieldset style="background-color:#AFEEEE">
       <legend class= "bfont">General Information</legend>
       <div class="centerdiv">
@@ -201,7 +201,7 @@
 				</select>
 			</div>
 			<div class="rightdiv">
-        <input type="submit" value="Submit" name="submit">
+        <input type="button" value="Submit" name="submit" onclick="submit_form()">
         <input type = "button" onclick = "back()" value = "Back">
 			</div>
 		</fieldset>
@@ -229,7 +229,8 @@
   }
   function submit_form()
   {
-    var sap= "<?php echo $sap_id; ?>"
+    var sap= "<?php echo $sap_id; ?>";
+    var title1= "<?php echo $title; ?>";
     var title= $("#title").val();
     var authors= $("#authors").val();
     if(authors.length==0)
@@ -283,7 +284,7 @@
     if(status.length==0)
     {var status=null;}
     var remarks= "Pending";
-    var query= "UPDATE data SET title='"+title+"', authors='"+authors+"', department='"+department+"', affiliation='"+affiliation+"', category='"+category+"', publisher='"+publisher+"', month='"+month+"', year='"+year+"', identifier='"+identifier+"', number='"+number+"', doi='"+doi+"', indexed='"+indexed+"', volume='"+volume+"', issue='"+issue+"', page_no='"+pageno+"', url='"+url+"', verification_document='"+verification+"', status='"+status+"' WHERE title='"+title+"'";
+    var query= "UPDATE data SET title='"+title+"', authors='"+authors+"', department='"+department+"', affiliation='"+affiliation+"', category='"+category+"', publisher='"+publisher+"', month='"+month+"', year='"+year+"', identifier='"+identifier+"', number='"+number+"', doi='"+doi+"', indexed='"+indexed+"', volume='"+volume+"', issue='"+issue+"', page_no='"+pageno+"', url='"+url+"', verification_document='"+verification+"', status='"+status+"' WHERE title='"+title1+"'";
     $.ajax({
       data: {query: query},
       url:"insert.php",

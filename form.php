@@ -23,7 +23,7 @@
 		$sap_id = $_SESSION['sapid'];
 		#$title = $_GET['title'];
 	?>
-	<form method="POST" onsubmit="submit_form();">
+	<form method="POST" action"" onsubmit="submit_form();">
 		<fieldset style="background-color:#AFEEEE">
       <legend class= "bfont">General Information</legend>
   		<div class="centerdiv">
@@ -147,7 +147,7 @@
   			</select>
   		</div>
   		<div class="rightdiv">
-        <input type="submit" value="Submit" name="submit" id="submit" disabled="disabled">
+        <input type="button" onclick = "submit_form()" value="Submit" name="submit" id="submit" disabled="disabled">
   			<input type = "button" onclick = "back()" value = "Back">
   		</div>
   	</fieldset>
@@ -176,7 +176,7 @@
   }
   function submit_form()
   {
-    var sap= "<?php echo $sap_id; ?>"
+    var sap= "<?php echo $sap_id; ?>";
     var title= $("#title").val();
     var authors= $("#authors").val();
     if(authors.length==0)
@@ -232,7 +232,6 @@
     var remarks= "Pending";
     var query= "INSERT INTO data (sap_id,title,authors,department,affiliation,category,publisher,month,year,identifier,number,doi,indexed,volume,issue,page_no,url,verification_document,status,remarks) VALUES("+sap+",'"+title+"','"+authors+"','"+department+"','"+affiliation+"','"+category+"','"+publisher+"','"+month+"',"+year+",'"+identifier+"','"+number+"','"+doi+"','"+indexed+"',"+volume+","+issue+",";
     var query= query+"'"+pageno+"','"+url+"','"+verification+"','"+status+"','"+remarks+"')";
-    alert(query);
     $.ajax({
       data: {query: query},
       url:"insert.php",
