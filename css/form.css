@@ -1,25 +1,45 @@
-.leftdiv { 
-    float: left; 
-} 
-.middlediv { 
-    float: left; 
-} 
-.rightdiv { 
-    float: left; 
-} 
+.leftdiv {
+    float: left;
+    background-color: 009900;
+    width: 30%;
+    padding: 1%;
+}
+.middlediv {
+    float: left;
+    padding: 1%;
+    background-color: 009900;
+    width: 30%;
+}
+.rightdiv {
+    float: left;
+    padding : 1%;
+    background-color: 009900;
+    width: 30%;
+}
 div.centerdiv{
 	width:100%;
 }
-	
-div{ 
-    padding : 1%; 
-    background-color: 009900; 
-    width: 30%; 
-	float:left;
-} 
 body{
 	font-size:20px;
 }
 .bfont{
 	font:italic bold 20px/30px Georgia, serif;
+}
+.author .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  left: 35%;
+}
+
+.author:hover .tooltiptext {
+  visibility: visible;
 }

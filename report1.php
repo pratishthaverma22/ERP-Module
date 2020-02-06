@@ -3,7 +3,6 @@ require('connection.php');
 session_start();
 $count = 0;
 $desig = $_SESSION['desig'];
-$tab = $_SESSION["tab"];
 $dep = $_SESSION["dep"];
 $query = $_GET['q'];
 $result = mysqli_query($db,$query);
@@ -15,15 +14,6 @@ if(!$result)
 <table>
 		<tr>
 			<th>S.NO.</th>
-			<?php
-			if($desig == "Manager" and $tab == "tr")
-			{
-			?>
-			<th>Faculty Name</th>
-			<?php
-			}
-			?>
-
 			<th>TITLE</th>
 			<th>AUTHORS</th>
 			<th>DEPARTMENT</th>
@@ -57,10 +47,6 @@ if(mysqli_num_rows($result)>0)
 
 		echo"<tr>";
 			echo"<td >".$count."</td>";
-			if($desig == "Manager" and $tab == "tr")
-			{
-				echo "<td>".$row["name"]."</td>";
-			}
 			echo"<td >".$row['title']."</td>";
 			echo "<td >".$row['authors']."</td>";
 			echo "<td>".$row['department']."</td>";
