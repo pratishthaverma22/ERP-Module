@@ -17,6 +17,8 @@
 			{
 				$('#frame').css("display","none");
 				$('#chart').css("display","block");
+				$('.chart').css("border-right","none");
+				$('.chart1').css("display","none");
 				$.ajax({
 					url:page,
 					complete: function (response) {
@@ -24,8 +26,9 @@
 						for (var i in result.data) {
 						color.push(dynamicColors());
 						}
-						var ctx = document.getElementById("myChart");
-						var myChart = new Chart(ctx, {
+						var ctx = document.getElementById("myChart1");
+						var cty = document.getElementById("myChart2");
+						var myChart1 = new Chart(ctx, {
 							type: 'pie',
 							data: {
 								labels: result.labels,
@@ -39,7 +42,66 @@
 						});
 					},
 					error: function () {
-					 $('#myChart').html('Bummer: there was an error!');
+					 $('#myChart1').html('Bummer: there was an error!');
+				 },
+				});
+			}
+			function load_chart1(page,page1)
+			{
+				$('#frame').css("display","none");
+				$('#chart').css("display","block");
+				$('.chart').css("border-right","solid black");
+				$('.chart1').css("display","block");
+				$.ajax({
+					url:page,
+					complete: function (response) {
+						var result = JSON.parse(response.responseText);
+						for (var i in result.data) {
+						color.push(dynamicColors());
+						}
+						var ctx = document.getElementById("myChart1");
+						var cty = document.getElementById("myChart2");
+						var myChart1 = new Chart(ctx, {
+							type: 'pie',
+							data: {
+								labels: result.labels,
+								datasets: [{
+									backgroundColor: color,
+									data: result.data
+								}]
+							},
+							options: options
+
+						});
+					},
+					error: function () {
+					 $('#myChart1').html('Bummer: there was an error!');
+				 },
+				});
+				$.ajax({
+					url:page1,
+					complete: function (response) {
+						var result = JSON.parse(response.responseText);
+						for (var i in result.data) {
+						color.push(dynamicColors());
+						}
+						var ctx = document.getElementById("myChart1");
+						var cty = document.getElementById("myChart2");
+						var myChart2 = new Chart(cty, {
+							type: 'pie',
+							data: {
+								labels: result.labels,
+								datasets: [{
+									backgroundColor: color,
+									data: result.data
+								}]
+							},
+							options: options
+
+						});
+					},
+					error: function () {
+					 $('#myChart1').html('Bummer: there was an error!');
 				 },
 				});
 			}
@@ -69,20 +131,21 @@
 					if($desig=="HOD")
 					{
 					?>
-					<li><a href="#" onclick="load_chart('chart.php?tab=tr')">Department Report</a></li>
+					<li><a href="#" onclick="load_chart1('chart.php?tab=tr','chart1.php?tab=tr')">Department Report</a></li>
 					<?php
 					}
 					if($desig=="Assistant Dean")
 					{
 					?>
 					<li><a href="#" onclick="load_page('status.php?tab=ad')">Status Review</a></li>
-					<li><a href="#" onclick="load_chart('chart.php?tab=d')">Overall Report</a></li>
+					<li><a href="#" onclick="load_page('target.php')">Set Target</a></li>
+					<li><a href="#" onclick="load_chart1('chart.php?tab=d','chart1.php?tab=d')">Overall Report</a></li>
 					<?php
 					}
 					if($desig=="Dean")
 					{
 					?>
-					<li><a href="#" onclick="load_chart('chart.php?tab=d')">Overall Report</a></li>
+					<li><a href="#" onclick="load_chart1('chart.php?tab=d','chart1.php?tab=d')">Overall Report</a></li>
 					<?php
 					}
 					?>
@@ -92,8 +155,11 @@
 		<div class="col-3" id="frame">
 		</div>
 		<div class="col-3" id="chart">
-			<div class="chart">
-				<canvas id='myChart' width='20px'></canvas>
+			<div class="chart" style="border-right:solid black">
+				<canvas id='myChart1'/>
+			</div>
+			<div class="chart1">
+				<canvas id='myChart2'/>
 			</div>
 		</div>
 	</body>

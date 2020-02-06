@@ -11,7 +11,9 @@ var options= {
      /* $("#canvas1").css("cursor", e[0] ? "pointer" : "default");
 
        without jquery it can be like this:*/
-        var el = document.getElementById("myChart");
+        var el = document.getElementById("myChart1");
+        el.style.cursor = a[0] ? "pointer" : "default";
+        var el = document.getElementById("myChart2");
         el.style.cursor = a[0] ? "pointer" : "default";
 
     }
