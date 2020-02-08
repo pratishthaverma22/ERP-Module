@@ -70,23 +70,26 @@ echo $json;
 $title        = $json_array["title"];
 $author_array = $json_array["author"];
 $jtitle       = $json_array["container-title"];
+$publisher    = $json_array["publisher"];
 $pages        = $json_array["page"];
+$volume       = $json_array["volume"];
+$issue        = $json_array["issue"];
 $issn_array   = $json_array["ISSN"];
-$url          = $json_array["URL"];
+$isbn_array   = $json_array["ISBN"];
+$url          = $json_array["link"];
 $year         = $json_array["issued"]["date-parts"][0][0];
+$month        = $json_array["issued"]["date-parts"][0][1];
 $author_count = count($author_array);
 $last = $author_count - 1;
-
-$author_list[] = trim($author_array[0]["family"]) . ", " . trim($author_array[0]["given"]);
-for($i=1; $i<$last; $i++)
+$url = $url[0];
+for($i=0; $i<$last; $i++)
 {
   $author_list[] = trim($author_array[$i]["given"]) . " " . trim($author_array[$i]["family"]);
 }
 $author_list[] = "and " . trim($author_array[$last]["given"]) . " " . trim($author_array[$last]["family"]);
-echo "Title:".$title."<br>"."Author:";
-print_r($author_list);
-
-echo "<br>Journal Title:".$jtitle."<br>Pages:".$pages."<br>ISSN:".$issn_array[0]."<br>URL:".$url."<br>Year:".$year;
+$authors = implode(", ", $author_list);
+echo "<br>Title:".$title."<br>"."Author:".$authors;
+echo "<br>Journal Title:".$jtitle."<br>Publisher:".$publisher."<br>Volume:".$volume."<br>Issue:".$issue."<br>Pages:".$pages."<br>ISBN:".$isbn_array[0]."<br>ISSN:".$issn_array[0]."<br>URL:".$url['URL']."<br>Month:".$month."<br>Year:".$year;
 
 $chicago_citation = get_chicago_citation($json_array, $doi, $doi_url);
 
