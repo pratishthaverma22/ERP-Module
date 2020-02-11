@@ -59,7 +59,7 @@
 			<div class="aligndiv author">
         List of Authors:
         <span class="tooltiptext">List of Authors should be typed as they appear in the paper</span>
-        <input type="text" name = "authors" value = "<?php echo $authors;?>" id="authors">
+        <input size="16" type="text" name = "authors" value = "<?php echo $authors;?>" id="authors">
       </div>
 			<div class="aligndiv">
         Department:
@@ -77,13 +77,13 @@
       </div>
 			<div class="aligndiv">
         Affiliation:
-        <input type="text" id="affiliation" name="affiliation" value = "<?php echo $affiliation;?>">
+        <input size="16" type="text" id="affiliation" name="affiliation" value = "<?php echo $affiliation;?>">
       </div>
     </fieldset>
     <fieldset style="background-color:#AFEEEE">
 			<legend class= "bfont">Publication Information</legend>
 			<div class="aligndiv">Publisher:&ensp;
-        <input type="text" id= "publisher" name="publisher" value = "<?php echo $publisher;?>">
+        <input size="16" type="text" id= "publisher" name="publisher" value = "<?php echo $publisher;?>">
       </div>
 			<div class="aligndiv">
         Identifier:
@@ -101,7 +101,7 @@
 			</div>
 			<div class="aligndiv">
         Number:&nbsp;
-        <input type="text" name="number" id="number" value = <?php echo $number;?>>
+        <input size="16" type="text" name="number" id="number" value = <?php echo $number;?>>
       </div>
 			<div class="aligndiv">
         Indexed in:
@@ -119,23 +119,23 @@
 			</div>
 			<div class="aligndiv">
         Volume: &ensp;
-        <input type="text" name="value" id="volume" value = "<?php echo $volume;?>">
+        <input size="16" type="text" name="value" id="volume" value = "<?php echo $volume;?>">
       </div>
 			<div class="aligndiv">
         Issue: &ensp;&ensp;&ensp;
-        <input type="text" id="issue" value = "<?php echo $issue;?>" name="issue">
+        <input size="16" type="text" id="issue" value = "<?php echo $issue;?>" name="issue">
       </div>
 			<div class="aligndiv">
         Page No.: &ensp;
-        <input type="text" id="pageno" name="pageno" value = "<?php echo $pageno;?>">
+        <input size="16" type="text" id="pageno" name="pageno" value = "<?php echo $pageno;?>">
       </div>
 			<div class="aligndiv">
         DOI:&ensp;&ensp;&ensp;&nbsp;
-        <input type="text" id="doi" name="doi" value = "<?php echo $doi;?>">
+        <input size="16" type="text" id="doi" name="doi" value = "<?php echo $doi;?>">
       </div>
 			<div class="aligndiv">
         URL:&ensp;&ensp;&ensp;
-        <input type="text" id="url" name="url" value = "<?php echo $url;?>">
+        <input size="16" type="text" id="url" name="url" value = "<?php echo $url;?>">
       </div>
 			<div class="aligndiv">
         Month:&ensp;&ensp;&ensp;
@@ -153,7 +153,7 @@
 			</div>
 			<div class="aligndiv">
         Year: &ensp;&ensp;&ensp;&nbsp;
-        <input type="text" id="year" name="year" value = "<?php echo $year;?>">
+        <input size="16" type="text" id="year" name="year" value = "<?php echo $year;?>">
       </div>
 			<div class="aligndiv">
         Category:
@@ -201,8 +201,8 @@
 				</select>
 			</div>
 			<div class="aligndiv">
-        <input type="button" value="Submit" name="submit" onclick="submit_form()">
-        <input type = "button" onclick = "back()" value = "Back">
+        <input size="16" type="button" value="Submit" name="submit" onclick="submit_form()">
+        <input size="16" type = "button" onclick = "back()" value = "Back">
 			</div>
 		</fieldset>
 	</form>

@@ -33,9 +33,9 @@
           echo "<td>".$row['Department']."</td>";
           echo "<form name='".$row['Department']."' method ='post' >";
           foreach($ind as $index){
-          echo "<td><input type='number' name='".$index,$row['department']."' value='".$row[$index]."'></td>";
+          echo "<td><input size=\"16\" type='number' name='".$index,$row['department']."' value='".$row[$index]."'></td>";
         }
-        echo "<td><input type='submit' name='".$row['Department']."' value='Set Value' onclick='setvalue(".$row['Department'].")'>";
+        echo "<td><input size=\"16\" type='submit' name='".$row['Department']."' value='Set Value' onclick='setvalue(".$row['Department'].")'>";
         echo "</form>";
         echo "</tr>";
         }

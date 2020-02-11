@@ -47,9 +47,9 @@
 		<div class="main">
 			<center><h2 style="color:yellow">Login Here</h2></center>
             <form action = "" method = "post">
-				<label>UserName  :&nbsp;&nbsp;</label><input type = "text" name = "loginid" class = "box"/><br /><br />
-				<label>Password&nbsp;&nbsp;  :&nbsp;&nbsp;</label><input type = "password" name = "password" class = "box" /><br/><br />
-				<center><input type = "submit" value = " Login"/></center><br />
+				<label>UserName  :&nbsp;&nbsp;</label><input size="16" type = "text" name = "loginid" class = "box"/><br /><br />
+				<label>Password&nbsp;&nbsp;  :&nbsp;&nbsp;</label><input size="16" type = "password" name = "password" class = "box" /><br/><br />
+				<center><input size="16" type = "submit" value = " Login"/></center><br />
             </form>
 			<?php echo $error; ?>
 		</div>

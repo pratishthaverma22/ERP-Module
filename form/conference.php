@@ -25,7 +25,7 @@
   		<div class="aligndiv author">
         List of Authors:
         <span class="tooltiptext">List of Authors should be typed as they appear in the paper</span>
-        <input type="text" name = "authors" id="authors">
+        <input size="16" type="text" name = "authors" id="authors">
       </div>
     	<div class="aligndiv">Department:
         <select name="department" id="department">
@@ -39,7 +39,7 @@
     	</div>
     	<div class="aligndiv">
         Affiliation:
-        <input type="text" name="affiliation" id="affiliation">
+        <input size="16" type="text" name="affiliation" id="affiliation">
       </div>
     </fieldset>
     <fieldset style="background-color:#AFEEEE">
@@ -63,21 +63,21 @@
         </select>
       </div>
       <div class="aligndiv">
-        Conference Dates:<input type="text" name="conf_dates" id="conf_dates">
+        Conference Dates:<input size="16" type="text" name="conf_dates" id="conf_dates">
       </div>
       <div class="aligndiv">
-        Organized By:<input type="text" name="orgainzed" id="orgainzed">
+        Organized By:<input size="16" type="text" name="orgainzed" id="orgainzed">
       </div>
       <div class="aligndiv">
-        Location:<input type="text" name="location" id="location">
+        Location:<input size="16" type="text" name="location" id="location">
       </div>
       <div class="aligndiv">
         Funding from UPES:<br>
-        <input type="radio" name="funding" checked value="Yes">Yes</input>
-        <input type="radio" name="funding" checked value="No">No</input>
+        <input size="16" type="radio" name="funding" checked value="Yes">Yes</input>
+        <input size="16" type="radio" name="funding" checked value="No">No</input>
       </div>
       <div class="aligndiv">
-        Amount:<input type="text" name="amount" id="amount" disabled="disabled">
+        Amount:<input size="16" type="text" name="amount" id="amount" disabled="disabled">
       </div>
     </fieldset>
   	<fieldset style="background-color:#AFEEEE">
@@ -91,26 +91,26 @@
   		</div>
     	<div class="aligndiv">
         Publisher:&ensp;
-        <input type="text" name="publisher" id="publisher">
+        <input size="16" type="text" name="publisher" id="publisher">
       </div>
 
   		<div class="aligndiv">
         ISSN Number:&nbsp;
-        <input type="text" name="number" id="number">
+        <input size="16" type="text" name="number" id="number">
       </div>
 
   		<div class="aligndiv">
         Page No.: &ensp;
-        <input type="text" name="pageno" id="pageno">
+        <input size="16" type="text" name="pageno" id="pageno">
       </div>
   		<div class="aligndiv">
         DOI:&ensp;&ensp;&ensp;&nbsp;
-        <input type="text" name="doi" id="doi">
-        <input type="button" name="val_doi" id="val_doi" value="Validate">
+        <input size="16" type="text" name="doi" id="doi">
+        <input size="16" type="button" name="val_doi" id="val_doi" value="Validate">
       </div>
       <div class="aligndiv">
         URL:&ensp;&ensp;&ensp;
-        <input type="text" name="url" id="url">
+        <input size="16" type="text" name="url" id="url">
       </div>
       <div class="aligndiv">
         Month:&ensp;&ensp;&ensp;
@@ -128,14 +128,14 @@
       </div>
       <div class="aligndiv">
         Year: &ensp;&ensp;&ensp;&nbsp;
-        <input type="text" id="year" name="year" value="<?php echo date("Y");?>">
+        <input size="16" type="text" id="year" name="year" value="<?php echo date("Y");?>">
       </div>
 
     </fieldset>
   	<fieldset style="background-color:#AFEEEE">
       <legend class= "bfont">Submission Information</legend>
       <div class="aligndiv">Upload Full Copy of Published Article:
-        <input type="text" name="verification" id="verification">
+        <input size="16" type="text" name="verification" id="verification">
   		</div>
   		<div class="aligndiv">
         Paper Status:
@@ -147,8 +147,8 @@
   			</select>
   		</div>
   		<div class="aligndiv">
-        <input type="button" onclick = "submit_form()" value="Submit" name="submit" id="submit" disabled="disabled">
-  			<input type = "button" onclick = "back()" value = "Back">
+        <input size="16" type="button" onclick = "submit_form()" value="Submit" name="submit" id="submit" disabled="disabled">
+  			<input size="16" type = "button" onclick = "back()" value = "Back">
   		</div>
   	</fieldset>
   </form>

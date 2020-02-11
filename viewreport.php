@@ -115,7 +115,7 @@ if(mysqli_num_rows($result)>0)
 <div style = "align:right;position:absolute; left:5%; top:23%" id ="filter">
 <h3>Filter</h3>
 
-		Name:<input type = "text" name="name" id="name"><br><br>
+		Name:<input size="16" type = "text" name="name" id="name"><br><br>
 Category:<select name = "category" id ="category">
 			<option value = "" select = "selected" name= "category" >Category</option>
 			<option value="Journal" >Journal</option>
@@ -138,7 +138,7 @@ Month:<select name="month" id="month">
 							}
 						?>
 					</select><br><br>
-Year:<input type="year" id ="year"><br><br>
+Year:<input size="16" type="year" id ="year"><br><br>
 Identifier:<select name="identifier" id="identifier">
 					<option value = "" select = "selected" name= "identifier" >Identifier</option>
 						<option value="ISSN">ISSN</option>
@@ -162,8 +162,8 @@ Remarks:<select name="remarks" id="remarks">
 						<option value="In-print">In-print</option>
 						<option value="Published">Published</option>
 					</select><br><br>
-<input style="right:25%; position:absolute" type= "submit" name = "submit" onclick="applyfilter();" value = "Filter">
-<input style="right:5%; position:absolute" type= "submit" name = "back" onclick="hide();" value = "Back">
+<input size="16" style="right:25%; position:absolute" type= "submit" name = "submit" onclick="applyfilter();" value = "Filter">
+<input size="16" style="right:5%; position:absolute" type= "submit" name = "back" onclick="hide();" value = "Back">
 </div>
 <script>
 function applyfilter()

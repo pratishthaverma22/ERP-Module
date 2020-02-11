@@ -33,7 +33,7 @@
   		<div class="aligndiv author">
         List of Authors:
         <span class="tooltiptext">List of Authors should be typed as they appear in the paper</span>
-        <input type="text" name = "authors" id="authors">
+        <input size="16" type="text" name = "authors" id="authors">
       </div>
     	<div class="aligndiv">Department:
         <select name="department" id="department">
@@ -47,14 +47,14 @@
     	</div>
     	<div class="aligndiv">
         Affiliation:
-        <input type="text" name="affiliation" id="affiliation">
+        <input size="16" type="text" name="affiliation" id="affiliation">
       </div>
     </fieldset>
   	<fieldset style="background-color:#AFEEEE">
       <legend class= "bfont">Publication Information</legend>
     	<div class="aligndiv">
         Publisher:&ensp;
-        <input type="text" name="publisher" id="publisher">
+        <input size="16" type="text" name="publisher" id="publisher">
       </div>
     	<div class="aligndiv">
         Identifier:
@@ -66,7 +66,7 @@
     	</div>
   		<div class="aligndiv">
         Number:&nbsp;
-        <input type="text" name="number" id="number">
+        <input size="16" type="text" name="number" id="number">
       </div>
   		<div class="aligndiv">Indexed in:
         <select name="indexed" id="indexed">
@@ -80,23 +80,23 @@
   		</div>
   		<div class="aligndiv">
         Volume: &ensp;
-        <input type="text" name="value" id="volume">
+        <input size="16" type="text" name="value" id="volume">
       </div>
   		<div class="aligndiv">
         Issue: &ensp;&ensp;&ensp;
-        <input type="text" name="issue" id="issue">
+        <input size="16" type="text" name="issue" id="issue">
       </div>
   		<div class="aligndiv">
         Page No.: &ensp;
-        <input type="text" name="pageno" id="pageno">
+        <input size="16" type="text" name="pageno" id="pageno">
       </div>
   		<div class="aligndiv">
         DOI:&ensp;&ensp;&ensp;&nbsp;
-        <input type="text" name="doi" id="doi">
+        <input size="16" type="text" name="doi" id="doi">
       </div>
   		<div class="aligndiv">
         URL:&ensp;&ensp;&ensp;
-        <input type="text" name="url" id="url">
+        <input size="16" type="text" name="url" id="url">
       </div>
       <div class="aligndiv">
         Month:&ensp;&ensp;&ensp;
@@ -114,7 +114,7 @@
       </div>
   		<div class="aligndiv">
         Year: &ensp;&ensp;&ensp;&nbsp;
-        <input type="text" id="year" name="year" value="<?php echo date("Y");?>">
+        <input size="16" type="text" id="year" name="year" value="<?php echo date("Y");?>">
       </div>
   		<div class="aligndiv">
         Category:
@@ -147,8 +147,8 @@
   			</select>
   		</div>
   		<div class="aligndiv">
-        <input type="button" onclick = "submit_form()" value="Submit" name="submit" id="submit" disabled="disabled">
-  			<input type = "button" onclick = "back()" value = "Back">
+        <input size="16" type="button" onclick = "submit_form()" value="Submit" name="submit" id="submit" disabled="disabled">
+  			<input size="16" type = "button" onclick = "back()" value = "Back">
   		</div>
   	</fieldset>
   </form>
