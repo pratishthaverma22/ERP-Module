@@ -1,22 +1,16 @@
-.leftdiv {
+.aligndiv {
+    float: left;
+    background-color: 009900;
+    width: 25%;
+    padding: 1%;
+}
+.aligndiv1 {
     float: left;
     background-color: 009900;
     width: 30%;
     padding: 1%;
 }
-.middlediv {
-    float: left;
-    padding: 1%;
-    background-color: 009900;
-    width: 30%;
-}
-.rightdiv {
-    float: left;
-    padding : 1%;
-    background-color: 009900;
-    width: 30%;
-}
-div.centerdiv{
+.centerdiv{
 	width:100%;
 }
 body{

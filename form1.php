@@ -56,12 +56,12 @@
         &ensp;Title:&ensp;&ensp;&ensp;
         <textarea required rows="2" cols="100" name="title" id="title" onchange="validate();"><?php echo $title;?></textarea>
       </div>
-			<div class="leftdiv author">
+			<div class="aligndiv author">
         List of Authors:
         <span class="tooltiptext">List of Authors should be typed as they appear in the paper</span>
         <input type="text" name = "authors" value = "<?php echo $authors;?>" id="authors">
       </div>
-			<div class="middlediv">
+			<div class="aligndiv">
         Department:
 				<select name="department" id="department" >
 					<option value = "<?php echo $department;?>" select = "selected"><?php echo $department;?></option>
@@ -75,17 +75,17 @@
 					?>
         </select>
       </div>
-			<div class="rightdiv">
+			<div class="aligndiv">
         Affiliation:
         <input type="text" id="affiliation" name="affiliation" value = "<?php echo $affiliation;?>">
       </div>
     </fieldset>
     <fieldset style="background-color:#AFEEEE">
 			<legend class= "bfont">Publication Information</legend>
-			<div class="middlediv">Publisher:&ensp;
+			<div class="aligndiv">Publisher:&ensp;
         <input type="text" id= "publisher" name="publisher" value = "<?php echo $publisher;?>">
       </div>
-			<div class="middlediv">
+			<div class="aligndiv">
         Identifier:
 				<select name="identifier" id="identifier">
 					<option value = "<?php echo $identifier;?>" select = "selected"><?php echo $identifier;?></option>
@@ -99,11 +99,11 @@
 					?>
 				</select>
 			</div>
-			<div class="rightdiv">
+			<div class="aligndiv">
         Number:&nbsp;
         <input type="text" name="number" id="number" value = <?php echo $number;?>>
       </div>
-			<div class="middlediv">
+			<div class="aligndiv">
         Indexed in:
 				<select name="indexed" id="indexed">
 					<option value = "<?php echo $indexed;?>" select = "selected"><?php echo $indexed;?></option>
@@ -117,27 +117,27 @@
 					?>
 				</select>
 			</div>
-			<div class="rightdiv">
+			<div class="aligndiv">
         Volume: &ensp;
         <input type="text" name="value" id="volume" value = "<?php echo $volume;?>">
       </div>
-			<div class="leftdiv">
+			<div class="aligndiv">
         Issue: &ensp;&ensp;&ensp;
         <input type="text" id="issue" value = "<?php echo $issue;?>" name="issue">
       </div>
-			<div class="middlediv">
+			<div class="aligndiv">
         Page No.: &ensp;
         <input type="text" id="pageno" name="pageno" value = "<?php echo $pageno;?>">
       </div>
-			<div class="leftdiv">
+			<div class="aligndiv">
         DOI:&ensp;&ensp;&ensp;&nbsp;
         <input type="text" id="doi" name="doi" value = "<?php echo $doi;?>">
       </div>
-			<div class="rightdiv">
+			<div class="aligndiv">
         URL:&ensp;&ensp;&ensp;
         <input type="text" id="url" name="url" value = "<?php echo $url;?>">
       </div>
-			<div class="rightdiv">
+			<div class="aligndiv">
         Month:&ensp;&ensp;&ensp;
 				<select name="month" id="month">
 					<option value = "<?php echo $month;?>" select="selected"><?php echo $month;?></option>
@@ -151,11 +151,11 @@
 					?>
 				</select>
 			</div>
-			<div class="leftdiv">
+			<div class="aligndiv">
         Year: &ensp;&ensp;&ensp;&nbsp;
         <input type="text" id="year" name="year" value = "<?php echo $year;?>">
       </div>
-			<div class="leftdiv">
+			<div class="aligndiv">
         Category:
 				<select name="category" id="category">
 					<option value = "<?php echo $category;?>" select = "selected"><?php echo $category;?></option>
@@ -172,7 +172,7 @@
 		</fieldset>
 		<fieldset style="background-color:#AFEEEE">
 			<legend class= "bfont">Submission Information</legend>
-			<div class="leftdiv">
+			<div class="aligndiv">
         Verification Document:
 				<select name="verification" id="verification">
 					<option value = "<?php echo $verification;?>" select = "selected"><?php echo $verification;?></option>
@@ -186,7 +186,7 @@
 					?>
 					</select>
 			</div>
-			<div class="middlediv">
+			<div class="aligndiv">
         Paper Status:
 				<select name="remarks" id="status">
 					<option value = "<?php echo $status;?>" select = "selected"><?php echo $status;?></option>
@@ -200,7 +200,7 @@
 					?>
 				</select>
 			</div>
-			<div class="rightdiv">
+			<div class="aligndiv">
         <input type="button" value="Submit" name="submit" onclick="submit_form()">
         <input type = "button" onclick = "back()" value = "Back">
 			</div>

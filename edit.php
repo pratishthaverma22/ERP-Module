@@ -4,9 +4,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 		<script>
-			function load_blank_form(){
+			function load_blank_form(page){
 					window.parent.$("#frame").html("");
-					window.parent.$("#frame").load('form.php');
+					window.parent.$("#frame").load(page);
 						}
 			function load_form(title){
 				var page="form1.php?title="+title;
@@ -46,7 +46,9 @@
 
 			?>
 		</table>
-		<input type="button" value="Insert New Record" onclick="load_blank_form()" name='insert'>
+		<input type="button" value="Insert New Record" onclick="load_blank_form('form.php')" name='insert'>
+		<input type="button" value="Insert Journal Record" onclick="load_blank_form('./form/journal.php')" name="journal">
+		<input type="button" value="Insert Conference Record" onclick="" name="conference">
 		<div id="form" style="height:85vh display:hidden">
 
 			<!--<iframe name="editrorm" src="form.php" width="100%" height="100%"></iframe>-->
