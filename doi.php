@@ -3,8 +3,8 @@
 </head>
 <body>
   <form>
-  <input type='text' name='url'>
-  <input type ='submit' name='button1'>
+  <input size="16" type='text' name='url'>
+  <input size="16" type ='submit' name='button1'>
 </form>
   <?php
 
