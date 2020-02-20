@@ -1,5 +1,5 @@
 <?php
-$doi="10.1007/978-981-13-7403-6_40";
+$doi=$_GET['doi'];
 function doi_url($doi)
 {
   return "http://dx.doi.org/" . $doi;
@@ -24,7 +24,6 @@ function get_json_array($json)
 }
 $doi_url      = doi_url($doi);
 $json         = get_curl($doi_url);
-echo $json;
 $json_array   = get_json_array($json);
 if(array_key_exists("title",$json_array))
 {

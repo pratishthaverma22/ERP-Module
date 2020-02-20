@@ -193,8 +193,7 @@
   {
     var title1 = "<?php echo $title; ?>";
     var title= $("#title").val();
-    if(title==title1){}
-    else{
+    if(title!=title1){
     $.ajax({
       data: {title: title},
       url:"validate.php",
