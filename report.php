@@ -52,6 +52,7 @@ $mon=array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","De
 <h1>REPORT<h1>
 <h3>Publications indexed in SCOPUS & above</h3>
 <button style="float:left;" onclick="filter();">Filter</button>
+<button style="float:right" onclick="window.print()">Print</button>
 <br>
 <br>
 <div id="try">
