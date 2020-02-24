@@ -10,7 +10,7 @@
 			session_start();
 			$count=0;
 			$sap_id = $_SESSION['sapid'];
-			$query = "SELECT * FROM data WHERE sap_id = $sap_id AND remarks = \"Completed\"";
+			$query = "SELECT * FROM journal WHERE sap_id = $sap_id AND remarks = \"Completed\"";
 			$result = mysqli_query($db,$query);
 			if(!$result)
 			{

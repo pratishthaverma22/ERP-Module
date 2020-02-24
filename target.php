@@ -12,7 +12,7 @@
     require('connection.php');
     session_start();
     $department=array("Informatics","Systemics","Cybernetics","Virtualization","Computer Application");
-    $ind = array("SCI","Scopus","eSCI","UGC Approved","Other");
+    $ind = array("SCI","Scopus","Other");
     $sap_id = $_SESSION['sapid'];
     $query = "SELECT * FROM socs";
     $result = mysqli_query($db,$query);
