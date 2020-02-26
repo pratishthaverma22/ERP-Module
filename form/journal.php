@@ -36,7 +36,7 @@
     var title= $("#title").val();
     $.ajax({
       data: {title: title},
-      url:"validate.php",
+      url:".form/validate.php",
       complete: function (response){
         var exist = response.responseText;
         if(exist=="y")

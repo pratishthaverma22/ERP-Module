@@ -61,9 +61,9 @@ $fetch['pages']=$pages;}
 if(array_key_exists("ISSN",$json_array)){
 $issn_array   = $json_array["ISSN"];
 $fetch['issn']=$issn_array[0];}
-if(array_key_exists("ISBN",$json_array)){
+elseif(array_key_exists("ISBN",$json_array)){
   $isbn_array = $json_array["ISBN"];
-  $fetch['isbn']=$isbn_array[0];
+  $fetch['issn']=$isbn_array[0];
 }
 if(array_key_exists("URL",$json_array)){
 $url          = $json_array["URL"];

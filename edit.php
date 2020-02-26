@@ -12,10 +12,10 @@
 				var page="./form/journal_edit.php?title="+title;
 				window.parent.$("#frame").load(page);
 			}
-function load_conference_form(title){
-	var page="form1.php?title="+title;
-	window.parent.$("#frame").load(page);
-}
+			function load_conference_form(title){
+				var page="./form/conference_edit.php?title="+title;
+				window.parent.$("#frame").load(page);
+			}
 		</script>
 	</head>
 	<body>
@@ -48,7 +48,7 @@ function load_conference_form(title){
 					echo "</tr>";
 				}
 
-				$query1 = "SELECT title FROM journal WHERE sap_id = $sap_id AND remarks=\"Pending\"";
+				$query1 = "SELECT title FROM conference WHERE sap_id = $sap_id AND remarks=\"Pending\"";
 				$result1 = mysqli_query($db,$query1);
 				if(!$result1)
 				{
